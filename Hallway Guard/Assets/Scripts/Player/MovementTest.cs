@@ -7,7 +7,7 @@ public class MovementTest : MonoBehaviour
  
  public CharacterController controller;
 
- public float speed = 12f;
+ public float speed = 5f;
 
  public float gravity = -9.81f;
 
@@ -23,7 +23,7 @@ public class MovementTest : MonoBehaviour
 
  public bool isSprinting = false;
  
- public float sprintSpeed = 10.0f;
+ public float sprintSpeed = 15.0f;
 
     void Update()
     {
@@ -45,7 +45,12 @@ public class MovementTest : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.LeftShift))
+       
+    }
+
+    void FixedUpdate()
+    {
+         if (Input.GetKey(KeyCode.LeftShift))
         {
             isSprinting = true;
         }
@@ -56,8 +61,7 @@ public class MovementTest : MonoBehaviour
 
         if (isSprinting == true)
         {
-            speed = sprintSpeed;
-            //StaminaBar.instance.UseStamina(20);
+            speed = speed + sprintSpeed;
         }
     }
 }
