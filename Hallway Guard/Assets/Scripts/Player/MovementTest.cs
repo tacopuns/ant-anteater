@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MovementTest : MonoBehaviour
 {
+
  public bool gameOver = false;
 
  public GameObject WinPanel;
@@ -84,6 +85,7 @@ public class MovementTest : MonoBehaviour
        if (currentHealth < 1)
         {
            audioSource.PlayOneShot (loseClip,1);
+           Destroy(gameObject);
            LosePanel.SetActive(true);
            gameOver = true;
            
@@ -107,15 +109,24 @@ public class MovementTest : MonoBehaviour
         }
     }
     public void ChangeHunger (int scoreamount)
-    { 
+      { 
        Score = Score + scoreamount;
        ScoreText.text = "Hunger: " + Score.ToString();
-       
-    }
-     public void Damage()
-   {
+      }   
+    
+
+    void Damage()
+    {
      currentHealth -= 1;
-     HealthText.text = "Lives: " + currentHealth.ToString();
      audioSource.PlayOneShot(hitSound, 1);
+    }
+
+    void OnCollisionEnter(Collision col) 
+    {
+     if (col.gameObject.name =="Enemy") 
+     {
+         Debug.Log("<color=red>Error: </color>AssetBundle not found");
+        //Damage();
+     }
     }
 }
