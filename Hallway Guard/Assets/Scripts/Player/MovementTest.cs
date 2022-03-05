@@ -57,6 +57,7 @@ public class MovementTest : MonoBehaviour
 
     void Start()
     {
+
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         HealthText.text = "Lives:" + currentHealth.ToString();
@@ -115,18 +116,17 @@ public class MovementTest : MonoBehaviour
       }   
     
 
-    void Damage()
+    public void Damage()
     {
      currentHealth -= 1;
      audioSource.PlayOneShot(hitSound, 1);
     }
 
-    void OnCollisionEnter(Collision col) 
+    public void OnCollisionEnter(Collision col) 
     {
      if (col.gameObject.name =="Enemy") 
      {
-         Debug.Log("<color=red>Error: </color>AssetBundle not found");
-        //Damage();
+        Damage();
      }
     }
 }
