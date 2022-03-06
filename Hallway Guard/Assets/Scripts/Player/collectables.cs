@@ -3,23 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class collectable : MonoBehaviour
+public class collectables : MonoBehaviour
 {
-    public GameObject crums;
+    public GameObject crumbs;
 
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-    
-        {
-        MovementTest controller = other.GetComponent<MovementTest>();
-
-        if (controller != null)
-            {
-            controller.ChangeHunger(25);
-            Destroy(gameObject);
-            
-            }
-        }
+   void OnCollisionEnter(Collision other) 
+   {
+     if(other.gameObject.tag == "Player")
+     {
+        Destroy(gameObject);
+     }
     }
-
+    
 }

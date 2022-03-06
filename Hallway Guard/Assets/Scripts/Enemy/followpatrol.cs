@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class followpatrol : MonoBehaviour
 {   public float speed;
-    public float range;
+    public float range = 1f;
     public Transform player;
     public Transform Enemy;
     public NavMeshAgent enemyMesh;
@@ -13,6 +13,7 @@ public class followpatrol : MonoBehaviour
     private int randomSpot;
     private float waitTime;
     public float startWaitTime;
+    private CharacterController controller;
     
     // Start is called before the first frame update
     void Start()
@@ -20,17 +21,18 @@ public class followpatrol : MonoBehaviour
       waitTime = startWaitTime;
       randomSpot = Random.Range(0, moveSpots.Length);
       player = GameObject.FindWithTag ("Player").transform;
+      controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-      if (Vector3.Distance(Enemy.position, player.position) <= range)
+      if (Vector3.Distance(transform.position, player.position) <= range)
       {
        enemyMesh.SetDestination(player.position);
       } 
-         if (Vector3.Distance(Enemy.position, player.position) > range)
+         if (Vector3.Distance(transform.position, player.position) > range)
          {
            patrol();
          }  
