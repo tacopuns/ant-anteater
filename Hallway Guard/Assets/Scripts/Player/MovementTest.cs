@@ -68,7 +68,7 @@ public int cake;
         ScoreText.text = "Hunger: " + Score.ToString();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        HealthText.text = "Lives:" + currentHealth.ToString();
+        HealthText.text = "Lives: " + currentHealth.ToString();
     }
 
     void Update()
@@ -96,6 +96,7 @@ public int cake;
            audioSource.PlayOneShot (loseClip,1);
            Destroy(gameObject);
            LosePanel.SetActive(true);
+           //SceneManager.LoadScene("Loss");
            gameOver = true;
            
 		}
@@ -104,10 +105,11 @@ public int cake;
            audioSource.PlayOneShot (loseClip,1);
            Destroy(gameObject);
            LosePanel.SetActive(true);
-           gameOver = true;
+           //SceneManager.LoadScene("Loss");
+            gameOver = true;
         }
         {
-            HealthText.text = "Lives:" + currentHealth.ToString();
+            HealthText.text = "Lives: " + currentHealth.ToString();
             ScoreText.text = "Hunger: " + Score.ToString();
         }
         if (Score <= 200)
@@ -175,10 +177,11 @@ public int cake;
     }
     public void Cake()
     {
-           audioSource.PlayOneShot (winClip,1);
-           Destroy(gameObject);
-           WinPanel.SetActive(true);
-           gameOver = true;
+        //SceneManager.LoadScene("Win");
+        audioSource.PlayOneShot (winClip,1);
+        Destroy(gameObject);
+        WinPanel.SetActive(true);
+        gameOver = true;
     }
     
 }
