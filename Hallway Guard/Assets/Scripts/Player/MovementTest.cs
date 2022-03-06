@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MovementTest : MonoBehaviour
 {
+public int cake;
 
  public bool gameOver = false;
 
@@ -16,6 +17,8 @@ public class MovementTest : MonoBehaviour
  public AudioSource audioSource;
 
  public AudioClip collectibleSound;
+
+ public int damage = 5;
 
  public AudioClip winClip;
 
@@ -54,10 +57,15 @@ public class MovementTest : MonoBehaviour
  public bool isSprinting = false;
  
  public float sprintSpeed = 15.0f;
+ 
+ public float damageDelay = 60f;
+
+ public float damageTimer ;
+
 
     void Start()
     {
-
+        ScoreText.text = "Hunger: " + Score.ToString();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         HealthText.text = "Lives:" + currentHealth.ToString();
@@ -91,6 +99,30 @@ public class MovementTest : MonoBehaviour
            gameOver = true;
            
 		}
+        if (Score < 0)
+        {
+           audioSource.PlayOneShot (loseClip,1);
+           Destroy(gameObject);
+           LosePanel.SetActive(true);
+           gameOver = true;
+        }
+        {
+            HealthText.text = "Lives:" + currentHealth.ToString();
+            ScoreText.text = "Hunger: " + Score.ToString();
+        }
+        if (Score <= 200)
+      {
+          if (damageTimer < damageDelay)
+        {
+         damageTimer += Time.deltaTime;
+        }
+         else if( damageTimer > damageDelay )
+         {
+         Score -= damage;
+         damageTimer = 0f;
+         }
+
+        }
     }
 
     void FixedUpdate()
@@ -113,6 +145,7 @@ public class MovementTest : MonoBehaviour
       { 
        Score = Score + scoreamount;
        ScoreText.text = "Hunger: " + Score.ToString();
+       audioSource.PlayOneShot (collectibleSound,1);
       }   
     
 
@@ -120,6 +153,7 @@ public class MovementTest : MonoBehaviour
     {
      currentHealth -= 1;
      audioSource.PlayOneShot(hitSound, 1);
+
     }
 
     public void OnCollisionEnter(Collision col) 
@@ -128,5 +162,23 @@ public class MovementTest : MonoBehaviour
      {
         Damage();
      }
+     if (col.gameObject.name =="Cake")
+     {
+         Cake();
+     }
+     if (col.gameObject.tag == "Crumbs")
+     {
+         {
+         ChangeHunger(25);   
+         }
+     }
     }
+    public void Cake()
+    {
+           audioSource.PlayOneShot (winClip,1);
+           Destroy(gameObject);
+           WinPanel.SetActive(true);
+           gameOver = true;
+    }
+    
 }
