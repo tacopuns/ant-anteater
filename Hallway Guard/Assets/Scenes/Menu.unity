@@ -1248,7 +1248,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Credits: Gracie Sanabria, Meli Jackson, Yusmari Romero'
+  m_Text: 'Credits: Gracie Sanabria, Melissa Jackson, Yusmari Romero'
 --- !u!222 &1095024642
 CanvasRenderer:
   m_ObjectHideFlags: 0
