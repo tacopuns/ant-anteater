@@ -853,8 +853,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: -346}
-  m_SizeDelta: {x: 471.78674, y: 91.963806}
+  m_AnchoredPosition: {x: 20, y: -470}
+  m_SizeDelta: {x: 1240, y: 73.799}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1095024641
 MonoBehaviour:
@@ -883,13 +883,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 95
-    m_Alignment: 3
+    m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Credits: Gracie Sanabria, Meli Jackson, Yusmari Romero'
+  m_Text: 'Credits: Gracie Sanabria, Melissa Jackson, Yusmari Romero'
 --- !u!222 &1095024642
 CanvasRenderer:
   m_ObjectHideFlags: 0
