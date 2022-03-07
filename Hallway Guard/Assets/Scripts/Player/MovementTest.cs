@@ -7,7 +7,11 @@ using UnityEngine.SceneManagement;
 public class MovementTest : MonoBehaviour
 {
  public int cake;
+ 
+ public ParticleSystem yum;
 
+ public ParticleSystem hurt;
+ 
  public bool gameOver = false;
 
  public AudioSource audioSource;
@@ -68,6 +72,8 @@ public class MovementTest : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         HealthText.text = "Lives: " + currentHealth.ToString();
+        hurt.Stop();
+        yum.Stop();
     }
 
     void Update()
@@ -179,6 +185,7 @@ public class MovementTest : MonoBehaviour
     {
      currentHealth -= 1;
      audioSource.PlayOneShot(hitSound, 1);
+     hurt.Play();
 
     }
 
@@ -206,6 +213,7 @@ public class MovementTest : MonoBehaviour
         Destroy(gameObject);
         SceneManager.LoadScene("Win");
         gameOver = true;
+        yum.Play();
     }
     
 }
