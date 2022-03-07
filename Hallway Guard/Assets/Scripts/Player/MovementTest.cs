@@ -94,7 +94,7 @@ public int cake;
        if (currentHealth < 1)
         {
            audioSource.PlayOneShot (loseClip,1);
-           Destroy(gameObject);
+           
            LosePanel.SetActive(true);
            //SceneManager.LoadScene("Loss");
            gameOver = true;
@@ -103,7 +103,7 @@ public int cake;
         if (Score < 0)
         {
            audioSource.PlayOneShot (loseClip,1);
-           Destroy(gameObject);
+           
            LosePanel.SetActive(true);
            //SceneManager.LoadScene("Loss");
             gameOver = true;
@@ -179,7 +179,7 @@ public int cake;
     {
         //SceneManager.LoadScene("Win");
         audioSource.PlayOneShot (winClip,1);
-        Destroy(gameObject);
+        
         WinPanel.SetActive(true);
         gameOver = true;
     }
