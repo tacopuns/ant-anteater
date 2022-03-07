@@ -92,13 +92,8 @@ public int cake;
        if (currentHealth < 1)
         {
            audioSource.PlayOneShot (loseClip,1);
-<<<<<<< Updated upstream
-           
-           LosePanel.SetActive(true);
-=======
            Destroy(gameObject);
            SceneManager.LoadScene("Loss");
->>>>>>> Stashed changes
            //SceneManager.LoadScene("Loss");
            gameOver = true;
            
@@ -106,13 +101,8 @@ public int cake;
         if (Score < 0)
         {
            audioSource.PlayOneShot (loseClip,1);
-<<<<<<< Updated upstream
-           
-           LosePanel.SetActive(true);
-=======
            Destroy(gameObject);
            SceneManager.LoadScene("Loss");
->>>>>>> Stashed changes
            //SceneManager.LoadScene("Loss");
             gameOver = true;
         }
@@ -191,13 +181,8 @@ public int cake;
     {
         //SceneManager.LoadScene("Win");
         audioSource.PlayOneShot (winClip,1);
-<<<<<<< Updated upstream
-        
-        WinPanel.SetActive(true);
-=======
         Destroy(gameObject);
         SceneManager.LoadScene("Win");
->>>>>>> Stashed changes
         gameOver = true;
     }
     
