@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
+    
     public void PlayGame ()
     {
         SceneManager.LoadScene("Main");
@@ -29,5 +30,14 @@ public class MainMenu : MonoBehaviour
     public void WinScreen()
     {
         SceneManager.LoadScene("Win");
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            Debug.Log("Escape Quit!");
+        }
     }
 }
