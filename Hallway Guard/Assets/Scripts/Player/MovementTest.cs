@@ -10,10 +10,6 @@ public int cake;
 
  public bool gameOver = false;
 
- public GameObject WinPanel;
-
- public GameObject LosePanel;
-
  public AudioSource audioSource;
 
  public AudioClip collectibleSound;
@@ -28,6 +24,8 @@ public int cake;
 
  public GameObject points;
 
+ public GameObject pauseMenuUI;
+
  public Text ScoreText;
  
  public int currentHealth = 3;
@@ -36,7 +34,7 @@ public int cake;
  
  public CharacterController controller;
 
- public float speed = 5f;
+ public float speed = 6f;
 
  public float gravity = -9.81f;
 
@@ -94,8 +92,13 @@ public int cake;
        if (currentHealth < 1)
         {
            audioSource.PlayOneShot (loseClip,1);
+<<<<<<< Updated upstream
            
            LosePanel.SetActive(true);
+=======
+           Destroy(gameObject);
+           SceneManager.LoadScene("Loss");
+>>>>>>> Stashed changes
            //SceneManager.LoadScene("Loss");
            gameOver = true;
            
@@ -103,8 +106,13 @@ public int cake;
         if (Score < 0)
         {
            audioSource.PlayOneShot (loseClip,1);
+<<<<<<< Updated upstream
            
            LosePanel.SetActive(true);
+=======
+           Destroy(gameObject);
+           SceneManager.LoadScene("Loss");
+>>>>>>> Stashed changes
            //SceneManager.LoadScene("Loss");
             gameOver = true;
         }
@@ -141,6 +149,10 @@ public int cake;
         if (isSprinting == true)
         {
             speed = speed + sprintSpeed;
+        }
+        if (Input.GetKey(KeyCode.P))
+        {
+            pauseMenuUI.SetActive(true);
         }
     }
     public void ChangeHunger (int scoreamount)
@@ -179,8 +191,13 @@ public int cake;
     {
         //SceneManager.LoadScene("Win");
         audioSource.PlayOneShot (winClip,1);
+<<<<<<< Updated upstream
         
         WinPanel.SetActive(true);
+=======
+        Destroy(gameObject);
+        SceneManager.LoadScene("Win");
+>>>>>>> Stashed changes
         gameOver = true;
     }
     
