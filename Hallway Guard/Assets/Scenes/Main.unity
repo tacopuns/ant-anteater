@@ -792,11 +792,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 =======
-=======
->>>>>>> parent of 6e6d68c (terrain is finished and not BORING now)
   m_Script: {fileID: 11500000, guid: 0820496f6e164304d8da8699cfcb0493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -949,11 +946,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-<<<<<<< HEAD
   m_AnchoredPosition: {x: 20, y: -510}
-=======
-  m_AnchoredPosition: {x: 20, y: -20}
->>>>>>> parent of 6e6d68c (terrain is finished and not BORING now)
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &336984916
@@ -966,10 +959,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-<<<<<<< HEAD
 >>>>>>> 139ee674c8ddcc20ea5c6610582b26617179fc4c
-=======
->>>>>>> parent of 6e6d68c (terrain is finished and not BORING now)
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1496,11 +1486,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 672508720}
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &351230394
 =======
-=======
->>>>>>> parent of 6e6d68c (terrain is finished and not BORING now)
 --- !u!224 &672508723
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1517,18 +1504,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-<<<<<<< HEAD
   m_AnchoredPosition: {x: -20, y: -510}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &779856793
 >>>>>>> 139ee674c8ddcc20ea5c6610582b26617179fc4c
-=======
-  m_AnchoredPosition: {x: -20, y: -20}
-  m_SizeDelta: {x: 160, y: 50}
-  m_Pivot: {x: 1, y: 1}
---- !u!1 &779856793
->>>>>>> parent of 6e6d68c (terrain is finished and not BORING now)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1681,7 +1661,6 @@ Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
-<<<<<<< HEAD
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839629410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1697,23 +1676,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-=======
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839629410}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -88.5, y: -29.4, z: 0.1}
-  m_LocalScale: {x: 12.3135195, y: 6.1567597, z: 7.080273}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &873975148
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> parent of 6e6d68c (terrain is finished and not BORING now)
   serializedVersion: 6
   m_Component:
   - component: {fileID: 873975149}
