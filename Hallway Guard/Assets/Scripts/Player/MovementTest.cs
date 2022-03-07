@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MovementTest : MonoBehaviour
 {
-public int cake;
+ public int cake;
 
  public bool gameOver = false;
 
@@ -59,7 +59,8 @@ public int cake;
  public float damageDelay = 60f;
 
  public float damageTimer ;
-
+    
+ [SerializeField] private bool isPaused;
 
     void Start()
     {
@@ -123,8 +124,32 @@ public int cake;
          }
 
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            isPaused =!isPaused;
+        }
+        if (isPaused)
+        {
+            ActiveMenu();
+        }
+        else
+         {
+             DeactiveMenu();
+         }
     }
-
+    void ActiveMenu()
+    {
+        AudioListener.pause = true;
+        Time.timeScale = 0;
+        pauseMenuUI.SetActive(true);
+    }
+    public void DeactiveMenu()
+    {
+        AudioListener.pause = false;
+        Time.timeScale = 1;
+        pauseMenuUI.SetActive(false);
+        isPaused = false;
+    }
     void FixedUpdate()
     {
          if (Input.GetKey(KeyCode.LeftShift))
@@ -140,10 +165,7 @@ public int cake;
         {
             speed = speed + sprintSpeed;
         }
-        if (Input.GetKey(KeyCode.P))
-        {
-            pauseMenuUI.SetActive(true);
-        }
+       
     }
     public void ChangeHunger (int scoreamount)
       { 
