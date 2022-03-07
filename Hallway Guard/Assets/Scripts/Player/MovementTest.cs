@@ -117,19 +117,7 @@ public class MovementTest : MonoBehaviour
             HealthText.text = "Lives: " + currentHealth.ToString();
             ScoreText.text = "Hunger: " + Score.ToString();
         }
-        if (Score <= 200)
-      {
-          if (damageTimer < damageDelay)
-        {
-         damageTimer += Time.deltaTime;
-        }
-         else if( damageTimer > damageDelay )
-         {
-         Score -= damage;
-         damageTimer = 0f;
-         }
-
-        }
+      
         if (Input.GetKeyDown(KeyCode.P))
         {
             isPaused =!isPaused;
@@ -142,6 +130,10 @@ public class MovementTest : MonoBehaviour
          {
              DeactiveMenu();
          }
+         if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
     void ActiveMenu()
     {
@@ -171,7 +163,20 @@ public class MovementTest : MonoBehaviour
         {
             speed = speed + sprintSpeed;
         }
-       
+    
+      if (Score <= 200)
+      {
+          if (damageTimer < damageDelay)
+        {
+         damageTimer += Time.deltaTime;
+        }
+         else if( damageTimer > damageDelay )
+         {
+         Score -= damage;
+         damageTimer = 0f;
+         }
+
+     }
     }
     public void ChangeHunger (int scoreamount)
       { 
